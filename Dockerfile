@@ -1,0 +1,6 @@
+FROM openjdk:8
+ENV AWS_ACCESS_KEY_ID=AKIAWLKLKMTL4KUJGQEU \
+    AWS_SECRET_KEY=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
+ADD target/SpringAWSProject-1.0.jar app.jar
+EXPOSE 80
+ENTRYPOINT ["java","-jar","app.jar"]

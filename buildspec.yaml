@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Build started on 'date'
+      - mvn clean install
+  post_build:
+    comands:
+      - echo Build completed on 'date'
+artifacts:
+  files:
+    - target/SpringAWSProject-1.0.jar
