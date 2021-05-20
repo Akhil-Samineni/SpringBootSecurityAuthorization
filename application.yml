@@ -1,0 +1,44 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito:
+            clientId: 7e6rfm1ucoime94hp8jcvl5nlc
+            clientSecret: k0sk45aa2urgoa6od68ih41uaellbstflnr29tka3auh3onsu9a
+            scope: openid
+            redirect-uri: http://localhost:8084/login/oauth2/code/cognito
+            clientName: clientName
+        provider:
+          cognito:
+            issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_47LFhPfXU
+            user-name-attribute: cognito:username
+  jpa:
+    database-platofrm: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+      url: jdbc:h2:mem:akhildb
+      username: sa
+      password: password
+      driverClassName: org.h2.Driver
+server:
+  port: 8084
+
+amazon:
+  access:
+    key: AKIAWLKLKMTL4KUJGQEU
+    secret-key: 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
+  region: us-east-1
+  end-point:
+    url: dynamodb.us-east-1.amazonaws.com
+  kms:
+    keyarn: arn:aws:kms:us-east-1:436634019031:key/05e1a01d-560c-48bc-a76a-c177119f40f3
+  s3:
+    bucketName: akhils3bucket12345
+    bucketTransitName: akhils3transitbucket12345
+    accId: 436634019031sw
